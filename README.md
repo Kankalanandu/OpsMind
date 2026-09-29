@@ -43,7 +43,8 @@ GEMINI_API_KEY="your-gemini-api-key"
 ```
 
 *Note: If Hindsight API credentials are not provided or offline, OpsMind automatically engages Demo Memory Mode with high-fidelity local memory store, clearly labeled in the UI and status bar.*
-###Demo: https://opsmind-self-learning-incident-intelligence-agent.ai.studio/
+
+DEMO: https://opsmind-self-learning-incident-intelligence-agent.ai.studio/
 ### Run Locally
 
 ```bash
