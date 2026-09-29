@@ -1,0 +1,8 @@
+{
+  "name": "OpsMind - Self-Learning Incident Intelligence Agent",
+  "description": "Every incident teaches the organization something. OpsMind makes sure the organization never forgets. Self-learning production SRE agent powered by Hindsight persistent memory.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

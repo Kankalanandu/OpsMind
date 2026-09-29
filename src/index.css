@@ -1,0 +1,179 @@
+@import "tailwindcss";
+
+:root {
+  /* Carbon Design System Foundation */
+  --cds-bg: #161616;
+  --cds-layer-01: #262626;
+  --cds-layer-02: #393939;
+  --cds-layer-03: #525252;
+  --cds-layer-hover: #333333;
+  --cds-layer-selected: #353535;
+
+  --cds-text-primary: #F4F4F4;
+  --cds-text-secondary: #C6C6C6;
+  --cds-text-tertiary: #8D8D8D;
+  --cds-text-placeholder: #6F6F6F;
+
+  --cds-border-subtle: #393939;
+  --cds-border-strong: #525252;
+  --cds-border-interactive: #0F62FE;
+
+  --cds-interactive: #0F62FE;
+  --cds-interactive-hover: #0353E9;
+  --cds-interactive-active: #0043CE;
+  --cds-interactive-light: #D0E2FF;
+
+  --cds-ai-primary: #4589FF;
+  --cds-ai-accent: #78A9FF;
+  --cds-ai-tint: rgba(69, 137, 255, 0.1);
+  --cds-ai-border: rgba(69, 137, 255, 0.3);
+
+  /* Easing & Motion */
+  --ease-standard: cubic-bezier(0.2, 0, 0.38, 0.9);
+  --ease-enter: cubic-bezier(0, 0, 0.38, 0.9);
+  --ease-exit: cubic-bezier(0.2, 0, 1, 0.9);
+  --duration-instant: 80ms;
+  --duration-fast: 120ms;
+  --duration-standard: 180ms;
+  --duration-emphasis: 240ms;
+}
+
+@layer base {
+  body {
+    background-color: var(--cds-bg);
+    color: var(--cds-text-primary);
+    font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    overflow-x: hidden;
+    min-height: 100vh;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  code, pre, .font-mono {
+    font-family: 'IBM Plex Mono', 'JetBrains Mono', monospace;
+  }
+
+  /* Precision Focus Ring */
+  :focus-visible {
+    outline: 2px solid #0F62FE;
+    outline-offset: -2px;
+  }
+}
+
+/* Custom Scrollbar for Dense Enterprise Paneling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #161616;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #393939;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #525252;
+}
+
+/* Enterprise Surface Classes */
+.carbon-layer-01 {
+  background-color: var(--cds-layer-01);
+  border: 1px solid var(--cds-border-subtle);
+}
+
+.carbon-layer-02 {
+  background-color: var(--cds-layer-02);
+  border: 1px solid var(--cds-border-subtle);
+}
+
+.carbon-panel {
+  background-color: var(--cds-layer-01);
+  border: 1px solid var(--cds-border-subtle);
+  border-radius: 4px;
+}
+
+.carbon-card {
+  background-color: var(--cds-layer-01);
+  border: 1px solid var(--cds-border-subtle);
+  border-radius: 4px;
+  transition: background-color var(--duration-fast) var(--ease-standard), border-color var(--duration-fast) var(--ease-standard);
+}
+
+.carbon-card:hover {
+  background-color: var(--cds-layer-hover);
+  border-color: var(--cds-border-strong);
+}
+
+.carbon-card-selected {
+  background-color: var(--cds-layer-selected);
+  border-left: 3px solid #0F62FE;
+}
+
+.carbon-input {
+  background-color: #262626;
+  border: 1px solid #393939;
+  border-bottom: 1px solid #8D8D8D;
+  color: #F4F4F4;
+  border-radius: 2px;
+  transition: border-color var(--duration-fast) var(--ease-standard);
+}
+
+.carbon-input:focus {
+  border-color: #0F62FE;
+  outline: 2px solid #0F62FE;
+  outline-offset: -1px;
+}
+
+/* AI Distinctive Layer */
+.carbon-ai-panel {
+  background-color: #1f2533;
+  border: 1px solid rgba(69, 137, 255, 0.3);
+  border-left: 3px solid #4589FF;
+  border-radius: 4px;
+}
+
+/* Tabular & List Rows */
+.carbon-table-row {
+  border-bottom: 1px solid var(--cds-border-subtle);
+  transition: background-color var(--duration-instant) var(--ease-standard);
+}
+
+.carbon-table-row:hover {
+  background-color: var(--cds-layer-hover);
+}
+
+/* Fast Stagger Animations for AI Reveal */
+@keyframes carbon-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-carbon-reveal {
+  animation: carbon-fade-in var(--duration-standard) var(--ease-enter) forwards;
+}
+
+/* Stagger delays */
+.delay-1 { animation-delay: 40ms; }
+.delay-2 { animation-delay: 80ms; }
+.delay-3 { animation-delay: 120ms; }
+.delay-4 { animation-delay: 160ms; }
+
+/* Accessible Reduced Motion Guarantee */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
